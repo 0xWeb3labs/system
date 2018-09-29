@@ -1,0 +1,19 @@
+reboot and always get into grub command line like this in Black background and white words:
+Minimal Bash-like line editing is supported. For the first word, 
+TAB lists posible command completions. Anywhere else TAB lists
+possible device or file completions.
+grub>
+
+It is not big deal, the grub.cfg is corrupt. Just regenerated the file use:
+Your grub config file is corrupt or missing. Boot from the install media in resuce mode, 
+/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg 
+
+https://centos.org/forums/viewtopic.php?t=66334
+mount your system filesystems and look in e.g /mnt/sysimage/boot/grub2/ and see if there is a grub.cfg file present 
+or any that resemble that name that might be an older backup copy of it that you can rename to the right name. 
+If there is none then perhaps you can recreate it using grub2-mkconfig -o /boot/grub2/grub.cfg 
+
+you may need re boot using Centos USB disk, 
+#chroot /mnt/sysimage
+#/sbin/grub2-install /dev/sda
+https://www.tecmint.com/recover-or-rescue-corrupted-grub-boot-loader-in-centos-7/
