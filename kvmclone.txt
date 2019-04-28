@@ -1,0 +1,21 @@
+ virsh define /data/kvmconfig/qemu/centos62_1_91.xml
+
+ 1. install hard drive on 192.168.0.16, 2T new disk mounted  at /data
+ https://www.cnblogs.com/houdj/p/5292950.html
+ 2. copy kvm config files from /etc/libvirt/qemu @192.168.0.220 to /data/kvnconfig/qemu @192.168.0.16
+ 3. copy kvm virtual machine image file from /home/kvmhome @192.168.0.220 to /data/kvnhome
+ 4. modify vm configure files:
+ 4.1  disk file: <source file='/data/kvmhome/centos62_x64_1.qcow2'/>
+ 4.2  ip:   <graphics type='vnc' port='-1' autoport='yes' listen='192.168.0.16'>
+      <listen type='address' address='192.168.0.16'/>
+5. import configure file from xml 
+virsh define /data/kvmconfig/qemu/centos62_1_91.xml 
+6. start cloned virtual machine
+virsh start centos62_1_91
+7. check status
+[root@kvmserver qemu]# netstat -apn | grep 590
+tcp        0      0 192.168.0.16:5900           0.0.0.0:*                   LISTEN      15072/qemu-kvm      
+tcp        0      0 192.168.0.16:5901           0.0.0.0:*                   LISTEN      15260/qemu-kvm      
+tcp        0      0 192.168.0.16:5902           0.0.0.0:*                   LISTEN      15372/qemu-kvm      
+tcp        0      0 192.168.0.16:5901           192.168.0.206:63473         ESTABLISHED 15260/qemu-kvm      
+tcp        0      0 192.168.0.16:5902           192.168.0.206:63476         ESTABLISHED 15372/qemu-kvm      
