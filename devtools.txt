@@ -1,0 +1,17 @@
+#git
+go-ethereum need newer version of git to build 
+https://gist.github.com/samrocketman/8671036
+
+yum install gcc curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker
+cd /usr/local/src
+git clone https://github.com/git/git.git
+cd git
+#old method
+#git ls-remote origin | grep tags
+#git checkout v1.8.4
+#checkout latest stable version
+git checkout $(git ls-remote --tags origin | grep -oE 'v[0-9]+(.[0-9]+){2}$' | tail -n1)
+export DEFAULT_HELP_FORMAT="man"
+autoconf
+./configure
+make && make install
