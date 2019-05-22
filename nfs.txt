@@ -1,0 +1,6 @@
+#nfs client
+#ubuntu:
+apt-get install nfs-common
+
+#centos:
+yum install nfs-utils
