@@ -1,0 +1,17 @@
+yum groupinstall "X Window System" "GNOME Desktop" -y
+yum -y install xrdp tigervnc-server
+
+https://easy-admin.ca/index.php/2018/07/01/install-xrdp-on-centos-7-rhel-7/
+
+need more memory for GUI
+ 1006  virsh dominfo 0
+ 1007  virsh dominfo 1
+ 1008  virsh list --all
+ 1009  virsh setmaxmem Centos74_gw --size 8192000 --config
+ 1010  virsh setmem Centos74_gw --size 8192000 --config
+ 1011  virsh setmem Centos74_gw --size 4096000 --config
+ 1012  virsh list --all
+ 1013  virsh setmem Centos74_gw --size 4096000 --config
+ 1014  virsh setmem Centos74_gw --size 8192000 --config
+ 1015  virsh start Centos74_gw
+ 1016  virsh list --all
