@@ -1,5 +1,7 @@
 # 1. install
 yum groupinstall "X Window System" "GNOME Desktop" -y
+yum install  epel* -y
+yum --enablerepo=epel -y install xrdp
 yum -y install xrdp tigervnc-server
 
 https://easy-admin.ca/index.php/2018/07/01/install-xrdp-on-centos-7-rhel-7/
