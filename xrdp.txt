@@ -3,8 +3,12 @@ yum groupinstall "X Window System" "GNOME Desktop" -y
 yum install  epel* -y
 yum --enablerepo=epel -y install xrdp
 yum -y install xrdp tigervnc-server
+//开放3389端口
+firewall-cmd --permanent --zone=public --add-port=3389/tcp
+firewall-cmd --reload
 
 https://easy-admin.ca/index.php/2018/07/01/install-xrdp-on-centos-7-rhel-7/
+https://blog.csdn.net/sgrrmswtvt/article/details/81869208
 
 # 2. limited to one session 
 http://www.padtinc.com/blog/the-focus/how-to-install-and-configure-xrdp-and-same-session-xrdp-on-centos-6-7-rhel-6-7
