@@ -1,0 +1,8 @@
+install new virtual machine
+1.  修改qemu.conf
+
+# vi /etc/libvirt/qemu.conf 
+
+vnc_listen = "0.0.0.0"
+
+说明1：vnclisten 默认绑定127.0.0.1 在配置文件里指定VNC 绑定0.0.0.0IP,就不用在安装kvm虚拟机时指定vnclisten参数了。
