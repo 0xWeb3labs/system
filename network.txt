@@ -1,3 +1,15 @@
 https://blog.csdn.net/xsj_blog/article/details/52037609
 https://pip.pypa.io/en/stable/installing/
 https://www.jianshu.com/p/9a75eac15ba5
+https://github.com/shadowsocks/shadowsocks/wiki/Configure-Multiple-Users
+{
+    "server": "0.0.0.0",
+    "port_password": {
+        "8381": "foobar1",
+        "8382": "foobar2",
+        "8383": "foobar3",
+        "8384": "foobar4"
+    },
+    "timeout": 300,
+    "method": "aes-256-cfb"
+}
