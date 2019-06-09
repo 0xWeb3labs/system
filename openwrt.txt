@@ -1,10 +1,11 @@
 ssh root@192.168.1.1
 1. repaire wifi
-#wifi status
-#uci set wireless.@wifi-iface[0].encryption=psk2
-# uci set wireless.@wifi-iface[0].key="allcompass5131"
-# uci commit wireless
-#wifi
+wifi status
+uci set wireless.@wifi-device[0].disabled=0
+uci set wireless.@wifi-iface[0].encryption=psk2
+uci set wireless.@wifi-iface[0].key="allcompass5131"
+uci commit wireless
+wifi
 
 /etc/config/wireless
 config wifi-device 'radio0'
