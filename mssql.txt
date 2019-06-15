@@ -2,3 +2,10 @@
 https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017
 #2. restore database 
 https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-migrate-restore-database?view=sql-server-2017
+
+RESTORE DATABASE prepay 
+ FROM DISK = '/var/lib/ceph/osd/ceph-5/data/dbbak/prepay/prepaybak20190103.bak'
+ WITH MOVE 'prepay_Data' TO '/var/opt/mssql/data/prepay.mdf',
+ MOVE 'prepay_Log' to '/var/opt/mssql/data/prepay_log.ldf'
+ GO
+
