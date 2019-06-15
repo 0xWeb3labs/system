@@ -5,7 +5,8 @@ https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-migrate-restore-data
 
 RESTORE FILELISTONLY FROM DISK = '/var/lib/ceph/osd/ceph-5/data/dbbak/prepay/prepaybak20190103.bak'
 GO
-
+prepay_Data e:\Program Files\Microsoft SQL Server\MSSQL10_50.SQLEXPRESS\MSSQL\DATA\prepay.MDF D PRIMARY 
+prepay_Log  e:\Program Files\Microsoft SQL Server\MSSQL10_50.SQLEXPRESS\MSSQL\DATA\prepay.LDF                                                                   
 RESTORE DATABASE prepay 
 FROM DISK = '/var/lib/ceph/osd/ceph-5/data/dbbak/prepay/prepaybak20190103.bak'
 WITH MOVE 'prepay_Data' TO '/var/opt/mssql/data/prepay.mdf',
