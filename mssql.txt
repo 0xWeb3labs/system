@@ -1,5 +1,13 @@
 #1. install mssql on Linux 
 https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017
+#1.1 server
+sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
+sudo yum install -y mssql-server
+sudo /opt/mssql/bin/mssql-conf setup
+#1.2 tools
+sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
+sudo yum install -y mssql-tools unixODBC-devel
+
 #2. restore database 
 https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-migrate-restore-database?view=sql-server-2017
 
