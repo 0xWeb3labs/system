@@ -13,3 +13,8 @@ WITH MOVE 'prepay_Data' TO '/var/opt/mssql/data/prepay.mdf',
 MOVE 'prepay_Log' to '/var/opt/mssql/data/prepay_log.ldf'
 GO
 
+#3. datadir
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-mssql-conf?view=sql-server-2017#datadir
+sudo chown mssql /tmp/data
+sudo chgrp mssql /tmp/data
+sudo /opt/mssql/bin/mssql-conf set filelocation.defaultdatadir /tmp/data
