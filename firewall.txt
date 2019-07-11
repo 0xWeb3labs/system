@@ -1,0 +1,12 @@
+[root@localhost ~]# firewall-cmd --query-port=7545/tcp
+no
+[root@localhost ~]# firewall-cmd --add-port=7545/tcp --permanent
+success
+[root@localhost ~]# firewall-cmd --query-port=7545/tcp
+no
+[root@localhost ~]# firewall-cmd --reload
+success
+[root@localhost ~]# firewall-cmd --query-port=7545/tcp
+yes
+
+https://blog.csdn.net/qq_24232123/article/details/79781527
