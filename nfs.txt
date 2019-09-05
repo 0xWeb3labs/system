@@ -4,3 +4,7 @@ apt-get install nfs-common
 
 #centos:
 yum install nfs-utils
+
+https://www.howtoforge.com/nfs-server-and-client-on-centos-7
+chmod -R 755 /var/nfsshare
+chown nfsnobody:nfsnobody /var/nfsshare
