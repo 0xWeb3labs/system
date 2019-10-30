@@ -28,6 +28,7 @@ sudo chgrp mssql /tmp/data
 sudo /opt/mssql/bin/mssql-conf set filelocation.defaultdatadir /tmp/data
 
 #4. log file too big
+sqlcmd -Usa -S127.0.0.1 -PAllcom%131ww
 ALTER DATABASE prepay SET RECOVERY SIMPLE;
 alter database prepay modify file (name = prepay_log, SIZE = 200MB, FILEGROWTH=50MB)
 dbcc shrinkfile (prepay_log,200)
