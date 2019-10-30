@@ -26,3 +26,9 @@ https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-mssql-conf
 sudo chown mssql /tmp/data
 sudo chgrp mssql /tmp/data
 sudo /opt/mssql/bin/mssql-conf set filelocation.defaultdatadir /tmp/data
+
+#4. log file too big
+ALTER DATABASE prepay SET RECOVERY SIMPLE;
+alter database prepay modify file (name = prepay_log, SIZE = 200MB, FILEGROWTH=50MB)
+dbcc shrinkfile (prepay_log,200)
+go
