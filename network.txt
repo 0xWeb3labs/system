@@ -19,3 +19,11 @@ https://www.4spaces.org/centos7-install-bbr-plus-2019/
 
 vmess
 https://github.com/v2ray/v2ray-core/releases
+
+polipo
+https://blog.denghaihui.com/2017/10/10/shadowsocks-polipo/
+https://blog.csdn.net/weixin_37939964/article/details/78939914
+git clone https://github.com/jech/polipo.git
+yum install texinfo
+make 
+make install
