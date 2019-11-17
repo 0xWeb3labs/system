@@ -1,6 +1,14 @@
-https://blog.csdn.net/xsj_blog/article/details/52037609
-https://pip.pypa.io/en/stable/installing/
 https://www.jianshu.com/p/9a75eac15ba5
+$ yum install python-setuptools && easy_install pip 
+$ pip install shadowsocks
+
+client:
+/usr/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+https://brickyang.github.io/2017/01/14/CentOS-7-%E5%AE%89%E8%A3%85-Shadowsocks-%E5%AE%A2%E6%88%B7%E7%AB%AF/
+http://icejoywoo.github.io/2018/06/13/centos-use-ss.html
+
+server:
+$ ssserver -c /etc/shadowsocks/shadowsocks.json -d start
 https://github.com/shadowsocks/shadowsocks/wiki/Configure-Multiple-Users
 {
     "server": "0.0.0.0",
@@ -27,3 +35,7 @@ git clone https://github.com/jech/polipo.git
 yum install texinfo
 make 
 make install
+
+references:
+https://blog.csdn.net/xsj_blog/article/details/52037609
+https://pip.pypa.io/en/stable/installing/
