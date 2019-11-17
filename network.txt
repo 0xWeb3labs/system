@@ -36,6 +36,15 @@ yum install texinfo
 make 
 make install
 
+https://www.harker.cn/archives/proxychains.html
+git clone https://github.com/rofl0r/proxychains-ng
+cd proxychains-ng
+./configure --prefix=/usr --sysconfdir=/etc
+make 
+make install
+make install-config
+cd .. && rm -rf proxychains-ng
+
 references:
 https://blog.csdn.net/xsj_blog/article/details/52037609
 https://pip.pypa.io/en/stable/installing/
