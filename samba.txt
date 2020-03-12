@@ -1,3 +1,19 @@
+#yum install samba -y
+#vi /etc/samba/smb.conf
+[downloads]
+        comment = zhujuan guest share
+        path = /home/disk/ceph-3/data/downloads
+        public = yes
+        writable = yes
+        directory mask = 0775
+        create mask = 0775
+        valid users = zhujuan,liwei,root
+        write list = zhujuan,liwei,root
+        browseable = yes
+        available = yes
+        
+smbclient -L \\127.0.0.1
+
 # no right to access shared directory
 [liwei@osdnode173 data]$ smbclient //127.0.0.1/temp
 Enter WORKGROUP\liwei's password: 
