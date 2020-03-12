@@ -12,3 +12,19 @@ Enforcing
 $sudo chcon -Rt samba_share_t userdocs
 
 http://renxifeng.is-programmer.com/posts/39213.html
+
+#firewall
+为samba开放特定端口
+
+    firewall-cmd --zone=public --add-port=139/tcp --permanent
+    firewall-cmd --zone=public --add-port=445/tcp --permanent
+    firewall-cmd --zone=public --add-port=137/udp --permanent
+    firewall-cmd --zone=public --add-port=138/udp --permanent
+     
+    firewall-cmd --reload
+    systemctl restart firewalld.service
+
+注：samba开发tcp/139,445端口，udp/137,138端口。
+————————————————
+版权声明：本文为CSDN博主「桥路丶」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_33876553/article/details/82926776
