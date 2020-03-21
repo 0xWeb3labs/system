@@ -45,3 +45,11 @@ ALTER DATABASE prepay SET RECOVERY SIMPLE;
 alter database prepay modify file (name = prepay_log, SIZE = 200MB, FILEGROWTH=50MB)
 dbcc shrinkfile (prepay_log,200)
 go
+
+#5. restore sql server 2000 backup file to sql server 2017
+If your databases are smaller than 10GB, you can install a copy of Express (free) in a few minutes, and use that. You can download 2008 R2 Express here.
+##5.1 Install Microsoft® SQL Server® 2008 R2 SP2 - Express Edition 
+https://www.microsoft.com/en-us/download/details.aspx?id=30438
+##5.2 Restore 2000 file to 2008 R2 SP2 Using Microsoft SQL Server Management Studio
+##5.3 Backup the restored database
+https://dba.stackexchange.com/questions/99334/migrate-from-sql-server-2000-to-2012-without-a-2005-or-2008-instance/99340#99340
