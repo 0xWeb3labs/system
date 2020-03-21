@@ -22,6 +22,17 @@ WITH MOVE 'prepay_Data' TO '/var/opt/mssql/data/prepay.mdf',
 MOVE 'prepay_Log' to '/var/opt/mssql/data/prepay_log.ldf'
 GO
 
+1> RESTORE DATABASE prepay
+2> FROM DISK='/var/lib/ceph/osd/ceph-4/download/prepay-myfax-20200321_2008.bak'
+3> WITH MOVE 'prepay_Data' TO '/var/lib/ceph/osd/ceph-4/mssql/data/prepay.mdf',
+4> MOVE 'prepay_Log' to '/var/lib/ceph/osd/ceph-4/mssql/data/prepay_log.ldf'
+5> GO
+Msg 3154, Level 16, State 4, Server osdnode94, Line 1
+The backup set holds a backup of a database other than the existing 'prepay' database.
+Msg 3013, Level 16, State 1, Server osdnode94, Line 1
+RESTORE DATABASE is terminating abnormally.
+
+
 #3. datadir
 https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-mssql-conf?view=sql-server-2017#datadir
 sudo chown mssql /tmp/data
