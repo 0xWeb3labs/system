@@ -11,6 +11,7 @@ sudo yum install -y mssql-tools unixODBC-devel
 #2. restore database 
 https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-migrate-restore-database?view=sql-server-2017
 
+sqlcmd -S localhost -U SA
 RESTORE FILELISTONLY FROM DISK = '/var/lib/ceph/osd/ceph-5/data/dbbak/prepay/prepaybak20190103.bak'
 GO
 prepay_Data e:\Program Files\Microsoft SQL Server\MSSQL10_50.SQLEXPRESS\MSSQL\DATA\prepay.MDF D PRIMARY 
