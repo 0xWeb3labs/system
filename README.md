@@ -1,7 +1,7 @@
 # system
 OS related
 
-#open port
+#open port - firewall
 
 firewall-cmd --zone=public --add-port=3000/tcp --permanent
 
@@ -25,15 +25,15 @@ Otherwise, substitute public for your zone, for example, if your zone is dmz:
 
 firewall-cmd --zone=dmz --add-port=2888/tcp --permanent
 
-IPTABLES
+#IPTABLES
 https://stackoverflow.com/questions/19034542/how-to-open-port-in-centos
 
 
 First, you should disable selinux, edit file /etc/sysconfig/selinux so it looks like this:
-
+```
 SELINUX=disabled
 SELINUXTYPE=targeted
-
+```
 Save file and restart system.
 
 Then you can add the new rule to iptables:
