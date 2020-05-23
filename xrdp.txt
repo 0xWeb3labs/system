@@ -32,3 +32,15 @@ need more memory for GUI
  1014  virsh setmem Centos74_gw --size 8192000 --config
  1015  virsh start Centos74_gw
  1016  virsh list --all
+
+#3. Windows 2003
+Fix #1 (This will stop PCA from working):
+
+Backup your registry
+START
+RUN
+regedit
+go to HKEY_LOCAL_MACHINE\software\Microsoft\windows nt\currentversion\winlogon
+key GinaDLL needs to point to msgina.dll instead of C:\windows\system32\awgina.dll
+reboot
+https://theregime.wordpress.com/2008/01/08/cannot-remote-desktop-because-windows-logon-software-replaced/
