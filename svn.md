@@ -7,3 +7,7 @@
 * sudo svnadmin load /home/svn/repo  <allcomemail.dmp 
 * sudo killall svnserve
 * sudo svnserve -d -r /home/svn
+
+https://www.linuxtechi.com/install-apache-subversion-svn-centos-7/
+
+http://svnbook.red-bean.com/zh/1.8/svn.reposadmin.maint.html
