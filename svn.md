@@ -9,5 +9,7 @@
 * sudo svnserve -d -r /home/svn
 
 https://www.linuxtechi.com/install-apache-subversion-svn-centos-7/
+sudo htpasswd -cm /etc/svn-auth-accounts liwei
+
 
 http://svnbook.red-bean.com/zh/1.8/svn.reposadmin.maint.html
