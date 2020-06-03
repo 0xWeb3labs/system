@@ -41,3 +41,6 @@ Then you can add the new rule to iptables:
 iptables -A INPUT -m state --state NEW -p tcp --dport 8080 -j ACCEPT
 
 and restart iptables with /etc/init.d/iptables restart
+
+### sftp
+sftp -oPort=2323 xxx@gxxxxx
