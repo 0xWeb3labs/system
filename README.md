@@ -43,5 +43,7 @@ iptables -A INPUT -m state --state NEW -p tcp --dport 8080 -j ACCEPT
 and restart iptables with /etc/init.d/iptables restart
 
 ### sftp
+```
 sftp -oPort=2323 xxx@gxxxxx
 rsync -avz -e 'ssh -p 2222' /data/filestore liwei@gfax.org:/home/liwei/data/GFAX/filestore 
+```
