@@ -11,14 +11,17 @@ https://easy-admin.ca/index.php/2018/07/01/install-xrdp-on-centos-7-rhel-7/
 https://blog.csdn.net/sgrrmswtvt/article/details/81869208
 
 # 2. limited to one session 
+```
 http://www.padtinc.com/blog/the-focus/how-to-install-and-configure-xrdp-and-same-session-xrdp-on-centos-6-7-rhel-6-7
 #2.1 vi /etc/X11/Xrdp.ini
+or /etc/xrdp/xrdp.ini
 Change from port=-1 to port=ask-1
 ip=127.0.0.1
 port=ask-1
 #2.2 cd /etc/pam.d/
 edit the file xrdp-sesman
 add –> session required pam_limits.so
+```
 
 need more memory for GUI
  1006  virsh dominfo 0
