@@ -1,6 +1,17 @@
 # system
 OS related
+# yum repo
+```
+centos 6
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+yum makecache
+yum update -y
+if error 
+yum -y remove qpid-cpp-client
 
+https://www.cnblogs.com/echola/p/9970999.html
+https://www.cnblogs.com/thatsit/p/5233349.html
+```
 #open port - firewall
 
 firewall-cmd --zone=public --add-port=3000/tcp --permanent
