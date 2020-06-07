@@ -1,5 +1,6 @@
 # 1. install
 yum groupinstall "X Window System" "GNOME Desktop" -y
+you may yum groupinstall "Desktop" on Centos 6
 yum install  epel* -y
 yum --enablerepo=epel -y install xrdp
 yum -y install xrdp tigervnc-server
@@ -47,3 +48,6 @@ go to HKEY_LOCAL_MACHINE\software\Microsoft\windows nt\currentversion\winlogon
 key GinaDLL needs to point to msgina.dll instead of C:\windows\system32\awgina.dll
 reboot
 https://theregime.wordpress.com/2008/01/08/cannot-remote-desktop-because-windows-logon-software-replaced/
+
+#4. Install Chinese Fonts
+yum groupinstall "Chinese Support
