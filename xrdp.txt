@@ -11,6 +11,12 @@ firewall-cmd --reload
 https://easy-admin.ca/index.php/2018/07/01/install-xrdp-on-centos-7-rhel-7/
 https://blog.csdn.net/sgrrmswtvt/article/details/81869208
 
+auto start
+
+chkconfig xrdp on #centos 6
+systemcmtl enanle xrdp
+
+
 # 2. limited to one session 
 ```
 http://www.padtinc.com/blog/the-focus/how-to-install-and-configure-xrdp-and-same-session-xrdp-on-centos-6-7-rhel-6-7
