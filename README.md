@@ -1,5 +1,10 @@
 # system
 OS related
+```
+lsb_release and lshw
+yum install -y redhat-lsb
+yum install -y lshw
+```
 # yum repo
 ```
 centos 6
