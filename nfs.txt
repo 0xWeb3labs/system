@@ -19,6 +19,10 @@ NETWORKING=yes
 HOSTNAME=localhost.localdomain
 https://lists.opensuse.org/opensuse/2018-05/msg00540.html
 
+##firewall
+sudo firewall-cmd --add-service=nfs --permanent
+sudo firewall-cmd --reload
+
 ##修改exportfs
 使用exportfs命令使得修改后的exports文件起效，使用exportfs不用重启nfs服务。
 步骤 	执行命令
