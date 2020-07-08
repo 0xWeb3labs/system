@@ -18,3 +18,9 @@ vi /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=localhost.localdomain
 https://lists.opensuse.org/opensuse/2018-05/msg00540.html
+
+##修改exportfs
+使用exportfs命令使得修改后的exports文件起效，使用exportfs不用重启nfs服务。
+步骤 	执行命令
+Step 1 	exportfs
+Step 2 	showmount -e localhost
