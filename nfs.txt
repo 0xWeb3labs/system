@@ -9,6 +9,9 @@ https://www.howtoforge.com/nfs-server-and-client-on-centos-7
 chmod -R 755 /var/nfsshare
 chown nfsnobody:nfsnobody /var/nfsshare
 
+## change hostname
+hostnamectl set-hostname local.allcom
+
 ##solve NFS I/O Error (caused by default localhost.localdomain on clients)
 nfs4_reclaim_open_state lock reclaim failed
 The above error seems to be caused by /etc/hostname being used by initrd when nfs-mounting the root on startup.
