@@ -23,7 +23,9 @@ HOSTNAME=localhost.localdomain
 https://lists.opensuse.org/opensuse/2018-05/msg00540.html
 
 ##firewall
-sudo firewall-cmd --add-service=nfs --permanent
+sudo firewall-cmd --add-service=nfs --permanent --zone=public
+sudo firewall-cmd --add-service=mountd --permanent --zone=public
+sudo firewall-cmd --add-service=rpc-bind --permanent --zone=public
 sudo firewall-cmd --reload
 
 ##修改exportfs
