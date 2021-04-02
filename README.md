@@ -9,6 +9,8 @@ yum install -y lshw
 ```
 centos 6
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://www.xmpan.com/Centos-6-Vault-Aliyun.repo
+
 yum makecache
 yum update -y
 if error 
