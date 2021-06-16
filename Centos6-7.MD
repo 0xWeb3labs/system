@@ -14,6 +14,14 @@ yum erase openscap -y
 proxychains4 yum install https://buildlogs.centos.org/centos/6/upg/x86_64/Packages/openscap-1.0.8-1.0.1.el6.centos.x86_64.rpm
 yum install redhat-upgrade-tool preupgrade-assistant-contents -y
 ```
+#### if not work, try this
+https://mrlin.net/1408.html
+```
+yum install https://buildlogs.centos.org/centos/6/upg/x86_64/Packages/preupgrade-assistant-1.0.2-33.0.3.el6.centos.x86_64.rpm -y
+yum install https://buildlogs.centos.org/centos/6/upg/x86_64/Packages/preupgrade-assistant-contents-0.5.13-1.0.5.el6.centos.noarch.rpm -y
+yum install https://buildlogs.centos.org/centos/6/upg/x86_64/Packages/preupgrade-assistant-ui-1.0.2-33.0.3.el6.centos.x86_64.rpm -y
+yum install https://buildlogs.centos.org/centos/6/upg/x86_64/Packages/redhat-upgrade-tool-0.7.22-3.el6.centos.noarch.rpm -y
+```
 ### 2. pre upgrade check and failed fix
 ```
 preupg -l
