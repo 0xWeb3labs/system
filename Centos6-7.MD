@@ -28,10 +28,11 @@ preupg -l
 preupg -s CentOS6_7
 ```
 #### 2.1 Remove Desktop 
+```
 Result for GNOME Desktop Environment underwent several design modifications in CentOS 7 release
 Result: fail
 yum groupremove Desktop
-
+```
 #### 2.2 /usr/ directory cannot be on a separate partition
 ```
 Result for In-place Upgrade Requirements for the /usr/ Directory
