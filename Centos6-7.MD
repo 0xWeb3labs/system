@@ -54,17 +54,25 @@ http://blog.sina.com.cn/s/blog_13ea37b210102x9ah.html
 
 ### 4. post upgrade
 https://blog.csdn.net/qingkong999/article/details/79114925/
-#### get repo for centos 7
+#### 4.1 get repo for centos 7
 ```
 wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
 yum clean all
 yum makecache
 ```
-#### fix missing libs and start sshd for remote access
+#### 4.2 fix missing libs and start sshd for remote access
 ```
 ln -s /usr/lib64/libsasl2.so.3.0.0 /usr/lib64/libsasl2.so.2
 ln -s /usr/lib64/libpcre.so.1.2.0 /usr/lib64/libpcre.so.0
 yum install xz-compat-libs
 service sshd restart
+```
+#### 4.3 remove old packages and update centos 7
+```
+yum remove kernel-debug-2.6.32-754.29.2.el6.x86_64
+yum remove grubby-8.28-17.el7.x86_64
+yum remove kernel-debug-2.6.32-754.31.1.el6.x86_64
+yum remove kernel-debug-2.6.32-220.el6.x86_64
+yum update -y
 ```
