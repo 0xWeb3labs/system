@@ -74,5 +74,9 @@ yum remove kernel-debug-2.6.32-754.29.2.el6.x86_64
 yum remove grubby-8.28-17.el7.x86_64
 yum remove kernel-debug-2.6.32-754.31.1.el6.x86_64
 yum remove kernel-debug-2.6.32-220.el6.x86_64
+yum remove plymouth-theme-rings-0.8.3-29.el6.centos.noarch
+yum remove python-argparse-1.2.1-2.1.el6.noarch
+yum remove pyxf86config-0.3.37-7.1.el6.x86_64 -y
+yum remove gnome-python2-libwnck-2.28.0-5.el6.x86_64 -y
 yum update -y
 ```
