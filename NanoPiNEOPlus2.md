@@ -69,3 +69,5 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 ```
 #### 4. Transparent Proxy
 https://guide.v2fly.org/en_US/app/transparent_proxy.html#procedures
+
+https://www.v2ray.com/chapter_02/protocols/dokodemo.html
