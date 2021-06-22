@@ -15,6 +15,9 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j MASQUERADE
 ```
 ### set up wifi for ubuntu
+https://www.cyberciti.biz/faq/debian-ubuntu-linux-setting-wireless-access-point/
+
+https://help.ubuntu.com/community/Internet/ConnectionSharing
 #### check 
 nstall iw & execute following
 
