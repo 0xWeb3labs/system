@@ -67,3 +67,5 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 #echo 1| sudo tee /proc/sys/net/ipv4/ip_forward
 #sudo iptables -t nat -A POSTROUTING -s 10.10.0.0/16 -o ppp0 -j MASQUERADE
 ```
+#### 4. Transparent Proxy
+https://guide.v2fly.org/en_US/app/transparent_proxy.html#procedures
