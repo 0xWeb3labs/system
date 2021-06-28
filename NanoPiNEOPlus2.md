@@ -73,3 +73,43 @@ https://guide.v2fly.org/en_US/app/transparent_proxy.html#procedures
 https://www.v2ray.com/chapter_02/protocols/dokodemo.html
 
 https://toutyrater.github.io/app/tproxy.html
+
+##### 4.1 compile shadowsocks
+
+https://github.com/shadowsocks/shadowsocks-libev/issues/2706
+```
+mkdir ~/source && ~/source
+yum -y install gcc gettext autoconf libtool automake make pcre-devel asciidoc xmlto c-ares-devel libev-devel libsodium-devel mbedtls-devel
+export LIBSODIUM_VER=1.0.13
+wget https://download.libsodium.org/libsodium/releases/libsodium-$LIBSODIUM_VER.tar.gz
+tar xvf libsodium-$LIBSODIUM_VER.tar.gz
+pushd libsodium-$LIBSODIUM_VER
+./configure --prefix=/usr && make
+make install
+popd
+ldconfig
+
+export MBEDTLS_VER=2.6.0
+wget https://tls.mbed.org/download/mbedtls-$MBEDTLS_VER-gpl.tgz
+tar xvf mbedtls-$MBEDTLS_VER-gpl.tgz
+pushd mbedtls-$MBEDTLS_VER
+make SHARED=1 CFLAGS=-fPIC
+make DESTDIR=/usr install
+popd
+ldconfig
+
+# clean directory
+rm -rf /tmp/shadowsocks-libev
+
+# compile and install
+cd /tmp
+git clone https://github.com/shadowsocks/shadowsocks-libev.git
+cd shadowsocks-libev
+git submodule update --init --recursive
+./autogen.sh
+./configure
+make
+make install
+cd ..
+rm -rf /tmp/shadowsocks-libev
+```
