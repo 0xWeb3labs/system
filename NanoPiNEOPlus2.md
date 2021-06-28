@@ -86,7 +86,7 @@ https://github.com/shadowsocks/shadowsocks-libev/issues/2706
 ```
 mkdir ~/source && ~/source
 yum -y install gcc gettext autoconf libtool automake make pcre-devel asciidoc xmlto c-ares-devel libev-devel libsodium-devel mbedtls-devel
-export LIBSODIUM_VER=1.0.13
+export LIBSODIUM_VER=1.0.18
 wget https://download.libsodium.org/libsodium/releases/libsodium-$LIBSODIUM_VER.tar.gz
 tar xvf libsodium-$LIBSODIUM_VER.tar.gz
 pushd libsodium-$LIBSODIUM_VER
