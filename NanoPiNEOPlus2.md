@@ -76,6 +76,8 @@ https://toutyrater.github.io/app/tproxy.html
 
 https://blog.monsterxx03.com/2019/03/31/snet-transparent-ss-proxy-on-linux/
 
+https://ivo-wang.github.io/2019/04/18/ss-redir+dnsmasq+iptables-%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/
+
 ##### 4.1 compile shadowsocks
 
 https://github.com/shadowsocks/shadowsocks-libev/issues/2706
