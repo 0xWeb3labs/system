@@ -74,6 +74,8 @@ https://www.v2ray.com/chapter_02/protocols/dokodemo.html
 
 https://toutyrater.github.io/app/tproxy.html
 
+https://blog.monsterxx03.com/2019/03/31/snet-transparent-ss-proxy-on-linux/
+
 ##### 4.1 compile shadowsocks
 
 https://github.com/shadowsocks/shadowsocks-libev/issues/2706
