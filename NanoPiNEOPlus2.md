@@ -68,6 +68,8 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 #sudo iptables -t nat -A POSTROUTING -s 10.10.0.0/16 -o ppp0 -j MASQUERADE
 ```
 #### 4. Transparent Proxy
+use ss-redir (shadowsocks client) of shadowsocks and iptables to redirect the traffic to ss-redir
+
 https://guide.v2fly.org/en_US/app/transparent_proxy.html#procedures
 
 https://www.v2ray.com/chapter_02/protocols/dokodemo.html
