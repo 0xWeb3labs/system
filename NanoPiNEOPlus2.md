@@ -107,6 +107,12 @@ ldconfig
 # clean directory
 rm -rf /tmp/shadowsocks-libev
 
+# c-ares
+$ sudo apt-get install libc-ares2 libc-ares-dev
+or
+apple@ubuntu:~/liwei$  git clone https://github.com/c-ares/c-ares.git
+
+
 # compile and install
 cd /tmp
 git clone https://github.com/shadowsocks/shadowsocks-libev.git
