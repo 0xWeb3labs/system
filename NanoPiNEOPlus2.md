@@ -152,3 +152,8 @@ iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT –to-ports 1080
 #iptables -t nat -A OUTPUT -p tcp -j SHADOWSOCKS
 # 对于本机全局代理必须是加入到OUTPUT链中，上面这句可以不加，至此脚本结束
 ```
+iptables command
+```
+iptables -t nat -D  SHADOWSOCKS 29
+iptables -t nat -L SHADOWSOCKS --line-number
+```
