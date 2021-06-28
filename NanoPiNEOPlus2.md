@@ -114,8 +114,26 @@ git submodule update --init --recursive
 ./configure
 make
 make install
-cd ..
-rm -rf /tmp/shadowsocks-libev
+# cd ..
+# rm -rf /tmp/shadowsocks-libev
+#vi /etc/ss.conf
+{  
+"server":"192.168.0.94",  
+"server_port":10801,  
+"local_address":"0.0.0.0″,  
+"local_port":10801,  
+"password":"hello",  
+"timeout":600,  
+"method":"aes-256-cfb",  
+"fast_open":false  
+}
+
+oot@NanoPi-NEO-Plus2:/usr/local/shadowsocks/bin# ./ss-redir -c /etc/shadowsocks.conf 
+ 2021-06-28 09:10:27 INFO: initializing ciphers... aes-256-cfb
+ 2021-06-28 09:10:27 INFO: Stream ciphers are insecure, therefore deprecated, and should be almost always avoided.
+ 2021-06-28 09:10:27 INFO: listening at 0.0.0.0:10801
+ 2021-06-28 09:10:27 INFO: running from root user
+ 2021-06-28 09:13:34 ERROR: server recv: Connection reset by peer
 ```
 ##### 4.2 iptables
 ```
@@ -144,7 +162,7 @@ iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/254.0.0.0 -j RETURN
 #还可以加如国内ip段参见 https://gist.github.com/wen-long/8644507
 # Anything else should be redirected to shadowsocks’s local port
-iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT –to-ports 1080
+iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT –to-ports 10801
 #iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT –to-destination 192.168.0.94:10801
 
 
