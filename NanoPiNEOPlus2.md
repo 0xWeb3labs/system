@@ -113,3 +113,38 @@ make install
 cd ..
 rm -rf /tmp/shadowsocks-libev
 ```
+##### 4.2 iptables
+```
+#!/bin/bash
+# Create new chain
+iptables -t nat -N SHADOWSOCKS  
+iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS  
+# Ignore your shadowsocks server’s addresses
+# It’s very IMPORTANT, just be careful.
+iptables -t nat -A SHADOWSOCKS -d 192.168.0.94 -j RETURN  
+# 这一步非常重要！到服务端的出口数据不要再进行重定向，否则进入死循环
+#去除内网地址
+iptables -t nat -A SHADOWSOCKS -d 0.0.0.0 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 127.0.0.1 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN
+
+iptables -t nat -A SHADOWSOCKS -d 8.8.0.0/16 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/8 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 10.0.0.0/8 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 127.0.0.0/8 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 169.254.0.0/16 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 172.16.0.0/12 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 224.0.0.0/4 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN  
+iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/254.0.0.0 -j RETURN
+#还可以加如国内ip段参见 https://gist.github.com/wen-long/8644507
+# Anything else should be redirected to shadowsocks’s local port
+iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT –to-ports 1080
+#iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT –to-destination 192.168.0.94:10801
+
+
+# Apply the rules
+#iptables -t nat -A OUTPUT -p tcp -j SHADOWSOCKS
+# 对于本机全局代理必须是加入到OUTPUT链中，上面这句可以不加，至此脚本结束
+```
