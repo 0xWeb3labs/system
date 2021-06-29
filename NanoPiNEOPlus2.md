@@ -182,4 +182,8 @@ iptables command
 ```
 iptables -t nat -D  SHADOWSOCKS 29
 iptables -t nat -L SHADOWSOCKS --line-number
+####清除自定义规则
+清空整个链 iptables -F 链名比如iptables -t nat -F redsock
+删除指定的用户自定义链 iptables -X 链名 比如 iptables -t nat -F redsock
+从所选链中删除规则 iptables -D 链名 规则详情 比如 iptables -t nat -D redsock -d 223.223.192.0/255.255.240.0 -j RETURN
 ```
