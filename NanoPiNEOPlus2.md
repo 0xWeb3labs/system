@@ -18,12 +18,15 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 https://www.cyberciti.biz/faq/debian-ubuntu-linux-setting-wireless-access-point/
 
 https://help.ubuntu.com/community/Internet/ConnectionSharing
-#### check 
+#### check and prepare
 nstall iw & execute following
 
 sudo aptitude install iw
 iw list
 
+better remove avahi-daemon
+
+https://superuser.com/questions/316715/removing-the-avahi-daemon-on-ubuntu
 #### 1. Setup & host a wireless network
 hostapd
 ```
