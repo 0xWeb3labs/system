@@ -109,3 +109,8 @@ iptables -t mangle -A clash -d <local host ip> -j RETURN
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7892 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -p udp -j clash
 ```
+### save iptables
+```
+sudo apt install iptables-persistent netfilter-persistent
+sudo netfilter-persistent save
+sudo netfilter-persistent reload```
