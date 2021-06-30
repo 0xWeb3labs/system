@@ -72,6 +72,11 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 ```
 #### 4. Transparent Proxy
 use ss-redir (shadowsocks client) of shadowsocks and iptables to redirect the traffic to ss-redir
+https://breakertt.moe/2019/08/20/clash_gateway/
+
+##### clash+iptables
+
+should be the simplest way
 
 https://guide.v2fly.org/en_US/app/transparent_proxy.html#procedures
 
