@@ -9,6 +9,8 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j MASQUERADE
 ```
 ## v2ray
+https://www.v2ray.com/chapter_00/install.html
+
 https://github.com/v2fly/fhs-install-v2ray
 ```
   846  ln -s /root/tools/v2ray/v2ray /usr/local/bin/ 
