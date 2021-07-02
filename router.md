@@ -1,4 +1,4 @@
-## Tested on NanoPi NEO Plus2 and Untuntu PC box with WiFi
+##### Tested on NanoPi NEO Plus2 and Untuntu PC box with WiFi
 https://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO_Plus2#Setup_Wi-Fi_Hotspot
 
 ## 1. ap and router by iptables
