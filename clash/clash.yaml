@@ -47,7 +47,7 @@ external-controller: 0.0.0.0:9090
 
 # 存放配置文件的相对路径，或存放网页静态资源的绝对路径
 # Clash core 将会将其部署在 http://{{external-controller}}/ui
-external-ui: /home/apple/liwei/router/dashboard
+external-ui: /root/.config/clash/dashboard
 
 # RESTful API 的口令 (可选)
 # 通过 HTTP 头中 Authorization: Bearer ${secret} 参数来验证口令
@@ -207,12 +207,12 @@ proxies:
   #   rc4-md5 chacha20 chacha20-ietf xchacha20
   #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
 
-  - name: "ss1"
-    type: ss
-    server: server
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: "password"
+  # - name: "ss1"
+  #   type: ss
+  #   server: server
+  #   port: 443
+  #   cipher: chacha20-ietf-poly1305
+  #   password: "password"
     # udp: true
 
   # - name: "ss2"
@@ -278,28 +278,54 @@ proxies:
   #   #   #   Connection:
   #   #   #     - keep-alive
 
-  # socks5.
-  - name: "socks"
+ # socks5
+ - name: "socks94"
    type: socks5
-   server: 192.168.0.113
+   server: 192.168.0.94
+   port: 10801
+ # - name: "socks176"
+ #   type: socks5
+ #   server: 192.168.0.176
+ #   port: 10808
+ - name: "socks"
+   type: socks5
+#   server: 192.168.0.202
+   server: 127.0.0.1
+   port: 10808
+ - name: "socks163"
+   type: socks5
+   server: 192.168.0.163
    port: 10808
     # username: username
     # password: password
     # tls: true
     # skip-cert-verify: true
     # udp: true
-  - name: "httplocal"
-    type: http
-#    server: 192.168.0.113
-    server: 127.0.0.1
-    port: 10809
-
-  # http
-  - name: "http"
-    type: http
-    server: 192.168.0.113
+ # http
+ - name: "http94"
+   type: http
+   server: 192.168.0.94
 #    server: 127.0.0.1
-    port: 10809
+   port: 8125
+
+ - name: "http176"
+   type: http
+   server: 192.168.0.176
+#    server: 127.0.0.1
+   port: 10809
+
+ - name: "http163"
+   type: http
+   server: 192.168.0.163
+#    server: 127.0.0.1
+   port: 10809
+
+ - name: "http"
+   type: http
+#    server: 192.168.0.176
+#   server: 192.168.0.202
+   server: 127.0.0.1
+   port: 10809
     # username: username
     # password: password
     # tls: true # https
@@ -355,6 +381,12 @@ proxy-groups:
     type: relay
     proxies:
       - http
+      # - http176
+      # - http94
+      # - socks
+      # - socks94        
+      - http163
+      - socks163        
       # - vmess
       # - ss1
       # - ss2
@@ -397,7 +429,14 @@ proxy-groups:
     type: select
     proxies:
       - http
+      # - http94
+      # - http176
       - socks
+      # - socks94
+      - http163
+      - socks163        
+      # - socks176
+
       # - ss2
       # - vmess1
       # - auto
@@ -937,6 +976,11 @@ rules:
   - IP-CIDR,100.64.0.0/10,DIRECT
   - IP-CIDR,224.0.0.0/4,DIRECT
   - IP-CIDR6,fe80::/10,DIRECT
+  # - IP-CIDR,54.250.252.0/16,DIRECT
+  # - IP-CIDR,142.250.204.0/16,DIRECT
+  # - IP-CIDR,52.216.147.0/16,DIRECT
+  # - IP-CIDR,108.160.169.0/16,DIRECT
+  # - IP-CIDR,45.114.11.0/16,DIRECT
 
   # 最终规则
   - GEOIP,CN,DIRECT
