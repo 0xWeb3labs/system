@@ -5,6 +5,7 @@
 
 For Internet connection sharing we need ip forwarding and ip masquerading. Enable ip forwarding : execute
 
+** this is very important otherwise there is no voice fromclubhouse
 #echo 1| sudo tee /proc/sys/net/ipv4/ip_forward
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j MASQUERADE
 ```
