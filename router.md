@@ -1,15 +1,18 @@
-## ap and router 
+## 1. ap and router by iptables
 ```
 #turn-wifi-into-apmode yes
 #vi /etc/wpa_supplicant/wpa_supplicant.conf
 
 For Internet connection sharing we need ip forwarding and ip masquerading. Enable ip forwarding : execute
 
+** two line to implement basic router using iptables
 ** this is very important otherwise there is no voice fromclubhouse
 #echo 1| sudo tee /proc/sys/net/ipv4/ip_forward
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j MASQUERADE
 ```
-## v2ray
+## 2. v2ray (option)
+any other vpn service should be ok
+
 https://www.v2ray.com/chapter_00/install.html
 
 https://github.com/v2fly/fhs-install-v2ray
@@ -26,8 +29,8 @@ https://github.com/v2fly/fhs-install-v2ray
   866  cp /mnt/sdcard/v2mac.conf /usr/local/etc/v2ray/config.json
   
 ```  
-## clash
-clash basic config
+## 3. clash
+### 3.1 clash basic config
 ```
 port: 7890
 socks-port: 7891
@@ -53,7 +56,7 @@ Rule:
 - IP-CIDR,192.168.0.0/16,DIRECT
 - FINAL,Proxy
 ```
-clash ui
+### 3.2 clash ui
 ```
 cd ~/.config/
 mkdir clash
@@ -62,7 +65,7 @@ wget https://github.com/haishanh/yacd/archive/gh-pages.zip
 unzip gh-pages.zip
 mv yacd-gh-pages/ dashboard/
 ```
-clash as servie
+### 3.3 start clash automatically as servie
 ```
 #/etc/systemd/system/clash.service
 [Unit]
@@ -78,7 +81,7 @@ Restart=on-failure # or always, on-abort, etc
 [Install]
 WantedBy=multi-user.target
 ```
-##. iptables
+## 4. iptables configuration work with clash
 ```
 iptables -t nat -N clash
 iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
