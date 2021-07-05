@@ -10,7 +10,13 @@ For Internet connection sharing we need ip forwarding and ip masquerading. Enabl
 
 ** two line to implement basic router using iptables
 ** this is very important otherwise there is no voice fromclubhouse
+//临时
 #echo 1| sudo tee /proc/sys/net/ipv4/ip_forward
+//永久
+# nano /etc/sysctl.conf
+net.ipv4.ip_forward=1	//取消注释
+# sysctl -p	//保存
+
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j MASQUERADE
 ```
 ## 2. v2ray (option)
