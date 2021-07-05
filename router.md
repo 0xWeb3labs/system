@@ -11,7 +11,14 @@ may not need install isc-dhcp-server if it has udhcpd
 root@NanoPi-NEO-Plus2:~# ps -ef | grep dhcp
 root       617     1  0 04:41 ?        00:00:00 /usr/sbin/udhcpd -S
 root       659   516  0 04:41 ?        00:00:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-eth0.pid -lf /var/lib/NetworkManager/dhclient-7a5970f6-6621-30a9-bb09-987fcc7d197c-eth0.lease -cf /var/lib/NetworkManager/dhclient-eth0.conf eth0
-
+# vi /etc/udpcpd.conf
+# The start and end of the IP lease block
+start           192.168.8.20
+end             192.168.8.254
+opt     dns     192.168.8.1 8.8.8.8
+option  subnet  255.255.255.0
+opt     router  192.168.8.1
+opt     wins    192.168.8.1
 
 For Internet connection sharing we need ip forwarding and ip masquerading. Enable ip forwarding : execute
 
