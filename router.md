@@ -5,6 +5,13 @@ https://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO_Plus2#Setup_Wi-Fi_Hotspot
 ```
 #turn-wifi-into-apmode yes
 #vi /etc/wpa_supplicant/wpa_supplicant.conf
+```
+may not need install isc-dhcp-server if it has udhcpd
+```
+root@NanoPi-NEO-Plus2:~# ps -ef | grep dhcp
+root       617     1  0 04:41 ?        00:00:00 /usr/sbin/udhcpd -S
+root       659   516  0 04:41 ?        00:00:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-eth0.pid -lf /var/lib/NetworkManager/dhclient-7a5970f6-6621-30a9-bb09-987fcc7d197c-eth0.lease -cf /var/lib/NetworkManager/dhclient-eth0.conf eth0
+
 
 For Internet connection sharing we need ip forwarding and ip masquerading. Enable ip forwarding : execute
 
