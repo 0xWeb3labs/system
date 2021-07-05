@@ -54,6 +54,9 @@ https://github.com/v2fly/fhs-install-v2ray
   
 ```  
 ## 3. clash
+http://blog.joylau.cn/2020/05/01/Clash-Config/
+
+https://docs.cfw.lbyczf.com/contents/ui/profiles/rules.html
 ### 3.1 clash basic config
 ```
 port: 7890
