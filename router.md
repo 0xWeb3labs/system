@@ -23,6 +23,10 @@ https://github.com/v2fly/fhs-install-v2ray
 // 安裝執行檔和 .dat 資料檔
 # bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 
+// 只更新 .dat 資料檔
+# bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
+// remove 
+# bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh) --remove
   
 ```  
 ## 3. clash
