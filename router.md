@@ -20,16 +20,9 @@ https://www.v2ray.com/chapter_00/install.html
 
 https://github.com/v2fly/fhs-install-v2ray
 ```
-  846  ln -s /root/tools/v2ray/v2ray /usr/local/bin/ 
-  847  ln -s /root/tools/v2ray/v2ctl /usr/local/bin/ 
-  849  mkdir /usr/local/share/v2ray
-  850  mkdir /var/log/v2ray
-  851  ln -s /root/tools/v2ray/geoip.dat /usr/local/share/v2ray/
-  852  ln -s /root/tools/v2ray/geosite.dat /usr/local/share/v2ray/
-  853  mkdir /usr/local/etc/v2ray
-  854  ln -s /root/tools/v2ray/systemd/system/v2ray.service /etc/systemd/system/
-  855  ln -s /root/tools/v2ray/systemd/system/v2ray@.service /etc/systemd/system/
-  866  cp /mnt/sdcard/v2mac.conf /usr/local/etc/v2ray/config.json
+// 安裝執行檔和 .dat 資料檔
+# bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
+
   
 ```  
 ## 3. clash
