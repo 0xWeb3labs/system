@@ -2,10 +2,12 @@
 https://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO_Plus2#Setup_Wi-Fi_Hotspot
 
 ## 1. ap and router by iptables
+### 1.1 Access Point
 ```
 #turn-wifi-into-apmode yes
 #vi /etc/wpa_supplicant/wpa_supplicant.conf
 ```
+### 1.2 DHCP Server
 may not need install isc-dhcp-server if it has udhcpd
 ```
 root@NanoPi-NEO-Plus2:~# ps -ef | grep dhcp
@@ -19,7 +21,9 @@ opt     dns     192.168.8.1 8.8.8.8
 option  subnet  255.255.255.0
 opt     router  192.168.8.1
 opt     wins    192.168.8.1
-
+```
+### 1.3 Basic Routing: Internet Access
+```
 For Internet connection sharing we need ip forwarding and ip masquerading. Enable ip forwarding : execute
 
 ** two line to implement basic router using iptables
