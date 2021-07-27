@@ -652,6 +652,11 @@ rules:
   - DOMAIN-KEYWORD,blogspot,Proxy
   - DOMAIN-SUFFIX,youtu.be,Proxy
   - DOMAIN-KEYWORD,whatsapp,Proxy
+  - DOMAIN-SUFFIX,clubhouseapi.com,Proxy
+  - DOMAIN-SUFFIX,clubhouseprod.s3.amazonaws.com,Proxy
+  - DOMAIN-SUFFIX,clubhouse.pubnub.com,PROXY
+  - DOMAIN-SUFFIX,maintenance.joinclubhouse.com,Proxy
+  - DOMAIN-SUFFIX,ap3.agora.io,Proxy
 
   # 常见广告域名屏蔽
   - DOMAIN-KEYWORD,admarvel,REJECT
