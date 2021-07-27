@@ -80,6 +80,17 @@ should be the simplest way
 http://blog.joylau.cn/2020/05/01/Clash-Config/
 
 https://docs.cfw.lbyczf.com/contents/ui/profiles/rules.html
+
+###### modify clash.yaml for clubhouse
+```
+  # 抗 DNS 污染
+  - DOMAIN-SUFFIX,clubhouseapi.com,Proxy
+  - DOMAIN-SUFFIX,clubhouseprod.s3.amazonaws.com,Proxy
+  - DOMAIN-SUFFIX,clubhouse.pubnub.com,PROXY
+  - DOMAIN-SUFFIX,maintenance.joinclubhouse.com,Proxy
+  - DOMAIN-SUFFIX,ap3.agora.io,Proxy
+```
+###### Start and Web
 ```
 /mnt/sdcard/clash-linux-armv7-v1.6.0 -f /mnt/sdcard/clash.yaml 
 # clash 的 RESTful API 监听地址
