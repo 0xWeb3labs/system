@@ -104,7 +104,7 @@ fake-ip or redir-host
   # 抗 DNS 污染
   - DOMAIN-SUFFIX,clubhouseapi.com,Proxy
   - DOMAIN-SUFFIX,clubhouseprod.s3.amazonaws.com,Proxy
-  - DOMAIN-SUFFIX,clubhouse.pubnub.com,PROXY
+  - DOMAIN-SUFFIX,clubhouse.pubnub.com,Proxy
   - DOMAIN-SUFFIX,maintenance.joinclubhouse.com,Proxy
   - DOMAIN-SUFFIX,ap3.agora.io,Proxy
 ```
