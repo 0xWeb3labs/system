@@ -28,13 +28,21 @@ https://www.4spaces.org/centos7-install-bbr-plus-2019/
 vmess
 https://github.com/v2ray/v2ray-core/releases
 
-polipo
+###polipo
 https://blog.denghaihui.com/2017/10/10/shadowsocks-polipo/
 https://blog.csdn.net/weixin_37939964/article/details/78939914
 git clone https://github.com/jech/polipo.git
 yum install texinfo
 make 
 make install
+####restart polipo
+ps -ef | grep /usr/local/bin/polipo | grep config8125 | awk '{print "kill" " -9  " $2 }'
+ps -ef | grep /usr/local/bin/polipo | grep config8125 | awk '{print "kill" " -9  " $2 }' | sh
+echo /home/liwei/polipo.sh
+/home/liwei/polipo.sh
+crontab -e
+50 11 * * * /home/liwei/restartpolipo.sh
+
 
 https://www.harker.cn/archives/proxychains.html
 git clone https://github.com/rofl0r/proxychains-ng
