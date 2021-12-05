@@ -1,3 +1,13 @@
+https://openwrt.org/docs/guide-quick-start/basic_wifi
+Connect with SSH to your OpenWrt device: $ ssh root@192.168.1.1
+Execute uci show wireless to see all the wireless configurations and how many Wi-Fi chips (called “radio” in the config) there are on the device. Identify the radio number (0, 1, 2, etc) that are you aiming to. E.g., radio0, radio1, radio2, radioX.
+Find out your country in a list of ISO/IEC 3166 alpha2 country codes. There is a list in the Wikipedia article about ISO 3166-1 alpha-2.
+Execute uci set wireless.radioN.country='XX' to set the country code XX for each (N = 0, 1, 2) radio devices your router may have.
+Execute uci set wireless.radioN.disabled='0' to enable all the said radio(s).
+Commit the changes executing: uci commit wireless.
+Reload the wifi interfaces: wifi reload.
+Wait a couple of minutes to allow the radio(s) booting and eventually DFS scanning. Enjoy
+
 ssh root@192.168.1.1
 1. repaire wifi
 wifi status
