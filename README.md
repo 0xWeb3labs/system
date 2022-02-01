@@ -65,3 +65,9 @@ and restart iptables with /etc/init.d/iptables restart
 sftp -oPort=2323 xxx@gxxxxx
 rsync -avz -e 'ssh -p 2222' /data/filestore liwei@gfax.org:/home/liwei/data/GFAX/filestore 
 ```
+### v2ray
+
+https://github.com/v2fly/fhs-install-v2ray
+
+// 安裝執行檔和 .dat 資料檔
+# bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
