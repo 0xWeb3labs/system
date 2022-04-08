@@ -9,4 +9,9 @@
 [Fri Apr  8 07:45:03 UTC 2022] Registered
 [Fri Apr  8 07:45:03 UTC 2022] ACCOUNT_THUMBPRINT='MMvY51gUNpEquIZdLDEZUl2k2DkCQ-6WEwuHwqqYNPs'
 ./acme.sh --issue -w /var/www/garage -d garage.org
+web server with root at /var/www/garage should be up when run the above command
+```
+if failed like  Processing, The CA is processing your order, please just wait. (29/30)
+```
+./acme.sh --set-default-ca --server letsencrypt
 ```
