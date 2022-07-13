@@ -24,3 +24,35 @@ if failed like  Processing, The CA is processing your order, please just wait. (
 ```
 ./acme.sh --set-default-ca --server letsencrypt
 ```
+renew mat not work
+```
+ubuntu@ip-10-0-0-232:~$ .acme.sh/acme.sh --renew -d dns3.xyz
+[Wed Jul 13 13:42:47 CST 2022] Renew: 'dns3.xyz'
+[Wed Jul 13 13:42:47 CST 2022] Renew to Le_API=https://acme.zerossl.com/v2/DV90
+[Wed Jul 13 13:42:57 CST 2022] Using CA: https://acme.zerossl.com/v2/DV90
+[Wed Jul 13 13:42:57 CST 2022] Single domain='dns3.xyz'
+[Wed Jul 13 13:42:57 CST 2022] Getting domain auth token for each domain
+[Wed Jul 13 13:43:17 CST 2022] Getting webroot for domain='dns3.xyz'
+[Wed Jul 13 13:43:17 CST 2022] Verifying: dns3.xyz
+[Wed Jul 13 13:43:23 CST 2022] Processing, The CA is processing your order, please just wait. (1/30)
+[Wed Jul 13 13:43:33 CST 2022] Processing, The CA is processing your order, please just wait. (2/30)
+```
+this works
+```
+ .acme.sh//acme.sh --issue -w /var/www/dns3.xyz -d dns3.xyz
+ 
+ [Wed Jul 13 13:47:41 CST 2022] Using CA: https://acme-v02.api.letsencrypt.org/directory
+[Wed Jul 13 13:47:41 CST 2022] Single domain='dns3.xyz'
+[Wed Jul 13 13:47:41 CST 2022] Getting domain auth token for each domain
+[Wed Jul 13 13:47:43 CST 2022] Getting webroot for domain='dns3.xyz'
+[Wed Jul 13 13:47:43 CST 2022] Verifying: dns3.xyz
+[Wed Jul 13 13:47:44 CST 2022] Pending, The CA is processing your order, please just wait. (1/30)
+[Wed Jul 13 13:47:47 CST 2022] Success
+[Wed Jul 13 13:47:47 CST 2022] Verify finished, start to sign.
+[Wed Jul 13 13:47:47 CST 2022] Lets finalize the order.
+[Wed Jul 13 13:47:47 CST 2022] Le_OrderFinalize='https://acme-v02.api.letsencrypt.org/acme/finalize/600103416/106311596286'
+[Wed Jul 13 13:47:48 CST 2022] Downloading cert.
+[Wed Jul 13 13:47:48 CST 2022] Le_LinkCert='https://acme-v02.api.letsencrypt.org/acme/cert/03c2c6c68b8755d173cd079c20ff525d38ec'
+[Wed Jul 13 13:47:49 CST 2022] Cert success.
+
+```
