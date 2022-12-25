@@ -80,4 +80,10 @@ To                         Action      From
  .acme.sh/acme.sh --register-account -m kadloop@gmail.com
  .acme.sh/acme.sh --issue -w /var/www/dns3 -d sg.dns3.xyz
 ~/.acme.sh/acme.sh --issue -w /var/www/dns3.xyz -d sg.dns3.xyz 
+~/.acme.sh/acme.sh --issue -w /var/www/dns3.xyz -d dns3.xyz -d www.dns3.xyz
+[Sun 25 Dec 2022 03:41:52 PM UTC] Your cert is in: /root/.acme.sh/dns3.xyz/dns3.xyz.cer
+[Sun 25 Dec 2022 03:41:52 PM UTC] Your cert key is in: /root/.acme.sh/dns3.xyz/dns3.xyz.key
+[Sun 25 Dec 2022 03:41:52 PM UTC] The intermediate CA cert is in: /root/.acme.sh/dns3.xyz/ca.cer
+[Sun 25 Dec 2022 03:41:52 PM UTC] And the full chain certs is there: /root/.acme.sh/dns3.xyz/fullchain.cer
+
 ```
