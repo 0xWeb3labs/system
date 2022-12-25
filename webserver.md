@@ -56,3 +56,28 @@ this works
 [Wed Jul 13 13:47:49 CST 2022] Cert success.
 
 ```
+12/25/2022 - need to open http before acme
+```
+root@vultr:~/.acme.sh# ufw allow http
+root@vultr:~/.acme.sh# ufw allow https
+Rule added
+Rule added (v6)
+root@vultr:~/.acme.sh# ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere                  
+3002/udp                   ALLOW       Anywhere                  
+80/tcp                     ALLOW       Anywhere                  
+443/tcp                    ALLOW       Anywhere                  
+22 (v6)                    ALLOW       Anywhere (v6)             
+3002/udp (v6)              ALLOW       Anywhere (v6)             
+80/tcp (v6)                ALLOW       Anywhere (v6)             
+443/tcp (v6)               ALLOW       Anywhere (v6) 
+```
+```
+ .acme.sh/acme.sh --register-account -m kadloop@gmail.com
+ .acme.sh/acme.sh --issue -w /var/www/dns3 -d sg.dns3.xyz
+~/.acme.sh/acme.sh --issue -w /var/www/dns3.xyz -d sg.dns3.xyz 
+```
