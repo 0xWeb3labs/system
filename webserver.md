@@ -24,7 +24,7 @@ if failed like  Processing, The CA is processing your order, please just wait. (
 ```
 ./acme.sh --set-default-ca --server letsencrypt
 ```
-renew mat not work
+renew may not work
 ```
 ubuntu@ip-10-0-0-232:~$ .acme.sh/acme.sh --renew -d dns3.xyz
 [Wed Jul 13 13:42:47 CST 2022] Renew: 'dns3.xyz'
