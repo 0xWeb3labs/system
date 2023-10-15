@@ -45,4 +45,7 @@ Endpoint = 124.78.50.222:50431
 - https://seanzwrites.com/posts/hosting-from-home/
 
 - https://icloudnative.io/posts/wireguard-docs-practice/
-- 
+
+# centos 7
+https://gist.github.com/tegila/ae203f1c5a4a7f99837136a541bbf502#set-up-your-own-wireguard-vpn-server-on-centos
+https://www.hostafrica.com/blog/linux/install-wireguard-vpn-centos-7/)https://www.hostafrica.com/blog/linux/install-wireguard-vpn-centos-7/
