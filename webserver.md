@@ -29,6 +29,9 @@ if failed like  Processing, The CA is processing your order, please just wait. (
 ```
 renew may not work
 ```
+check if redirect http to https in default of 80
+        return 301 https://$host$request_uri;
+
 ubuntu@ip-10-0-0-232:~$ .acme.sh/acme.sh --renew -d dns3.xyz
 [Wed Jul 13 13:42:47 CST 2022] Renew: 'dns3.xyz'
 [Wed Jul 13 13:42:47 CST 2022] Renew to Le_API=https://acme.zerossl.com/v2/DV90
