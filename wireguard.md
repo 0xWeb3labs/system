@@ -1,5 +1,10 @@
 # client
 ```
+sudo wg show wg0
+ip a show wg0
+sudo systemctl enable wg-quick@wg0
+sudo systemctl disable wg-quick@wg0
+sudo wg-quick down wg0
 [Interface]
 PrivateKey = xxxxxx
 Address = 10.0.2.2/24
@@ -13,6 +18,7 @@ Endpoint = xxxxx:51820
 ```
 # server
 ```
+sudo wg set wg0 peer CLIENT_PUBLIC_KEY allowed-ips 10.0.0.2
 [Interface]
 Address = 10.0.2.1/24
 SaveConfig = true
